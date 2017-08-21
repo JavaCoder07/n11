@@ -1,5 +1,10 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
- - rbx-2
+language: java
+mvn test -B
+mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+gradle check
+gradle assemble
+install: ant deps
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk6
